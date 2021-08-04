@@ -7,6 +7,10 @@ class Item:
         return f"{self.name} je žánr {self.genre}. "
 
 class Movie(Item):
+    def getCelkovaDelka(self):
+        return self.delka
+
+
     def __init__(self, name, genre, length):
         self.name = name
         self.genre = genre
@@ -18,6 +22,9 @@ class Movie(Item):
         return text
 
 class Serial(Item):
+    def getCelkovaDelka(self):
+        return self.delka
+
     def __init__(self, name, genre, episodeNum, episodeLength):
         self.name = name
         self.genre = genre
@@ -29,14 +36,16 @@ class Serial(Item):
         text = text + f"Seriál má {self.episodeNum} dílů. Jedna epizoda trvá {self.episodeLength} minut."
         return text
 
+
+
 biglebowski = Movie("Big Lebowski", "komedie", 120)
 biglebowski.name = "Big Lebowski"
 biglebowski.genre = "komedie"
 biglebowski.length = 120
 
-bojackhorseman = Serial("BoJack Horseman", "komedie", 120, 25)
-bojackhorseman.name = "BoJack Horseman"
-bojackhorseman.genre = "komedie"
+bojackhorseman = Serial("Bojack Horseman", "animovaná komedie", 120, 25)
+bojackhorseman.name = "Bojack Horseman"
+bojackhorseman.genre = "animovaná komedie"
 bojackhorseman.episodeNum = 120
 bojackhorseman.episodeLength = 20
 

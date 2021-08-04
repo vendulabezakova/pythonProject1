@@ -22,10 +22,27 @@ class ValuablePackage(Package):
         self.delivered = False
         self.value = value
 
+class Driver:
+    def priradBalik(self, balik):
+        if balik.delivered == True:
+            print("Balík již byl doručen.")
+        else:
+            self.packageList.append(balik)
+        self.packageList.append(balik)
 
+    def zbyvaBaliku(self,zbyvaBaliku):
+        zbyvaBaliku = 0
+        for polozka in self.packageList:
+            if polozka.delivered == False:
+                pocetBaliku = pocetBaliku + 1
+            return pocetBaliku
+
+    def __init__(self, name):
+        self.name = name
+        self.packageList = []
 
 balik = ValuablePackage("Václavské náměstí 67", 5, 399)
 balik.deliver()
 print(balik.getInfo())
-
-
+ridic = Driver("Jirka")
+ridic.priradBalik
